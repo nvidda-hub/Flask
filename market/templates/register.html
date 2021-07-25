@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock title %}
+
+{% block body %}
+    <body class="text-center">   <!-- to centralize the content inside body -->
+        <div class="container">
+
+            <form method="POST" class="form-register" style="color:white">
+                {{ form.hidden_tag() }}
+                <img class="mb-4" src="https://www.ametektest.com/-/media/ametektest/contact/register_your_product_599x214.jpg" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">
+                    Create your Account
+                </h1>
+                <br>
+<!--                {{ form.user_name.label() }}-->
+                {{ form.user_name(class="form-control", placeholder="User Name") }}
+                <br>
+<!--                {{ form.email_address.label() }}-->
+                {{ form.email_address(class="form-control", placeholder="Email Address") }}
+                <br>
+<!--                {{ form.password1.label() }}-->
+                {{ form.password1(class="form-control", placeholder="Password : ") }}
+                <br>
+<!--                {{ form.password2.label() }}-->
+                {{ form.password2(class="form-control", placeholder="Confirm Password : ") }}
+
+                <br>
+
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+
+                <div class="checkbox mb-3">
+                    <br>
+                   <h6>Already have an account?</h6>
+                    <br>
+                   <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Signin</a>
+                </div>
+
+            </form>
+
+        </div>
+    </body>
+
+{% endblock body %}
